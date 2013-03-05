@@ -1,0 +1,56 @@
+name: SpawnerControl
+description: Allows players to control spawner settings
+main: com.github.stephengardner.spawnercontrol.SpawnerControl
+version: 0.5
+author: Stephen Gardner
+commands:
+    sccheck:
+        description: Checks spawners owned by player
+        usage: /sccheck [player]
+permissions:
+    sc.*:
+        description: Grants all SpawnerControl permissions
+        children:
+            sc.check: true
+            sc.check.others: true
+            sc.set.*: true
+            sc.bypass: true
+    sc.set.*:
+        description: Allows spawning of all creatures
+        children:
+            sc.set.animals: true
+            sc.set.traditional: true
+            sc.set.bat: true
+            sc.set.creeper: true
+            sc.set.enderdragon: true
+            sc.set.enderman: true
+            sc.set.ghast: true
+            sc.set.giant: true
+            sc.set.irongolem: true
+            sc.set.magmacube: true
+            sc.set.ocelot: true
+            sc.set.pigzombie: true
+            sc.set.slime: true
+            sc.set.snowman: true
+            sc.set.squid: true
+            sc.set.villager: true
+            sc.set.witch: true
+            sc.set.wither: true
+            sc.set.wolf: true
+    sc.set.animals:
+        description: Allows spawning of all farm animals
+        children:
+            sc.set.chicken: true
+            sc.set.cow: true
+            sc.set.mushroomcow: true
+            sc.set.pig: true
+            sc.set.sheep: true
+    sc.set.traditional:
+        description: Allows spawning of naturally occuring spawners
+        children:
+            sc.set.blaze: true
+            sc.set.cavespider: true
+            sc.set.silverfish: true
+            sc.set.skeleton: true
+            sc.set.spider: true
+            sc.set.zombie: true

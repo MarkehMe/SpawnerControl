@@ -1,0 +1,15 @@
+SpawnerControl:
+  Tool: 0
+  Language:
+    BORDER: "&2------------------------------------------"
+    CHANGED_MONSTER: "Changed &a%s &fspawner to a &a%s &fspawner."
+    CHANGED_MONSTER_OTHER: "Changed &6%s's &4%s &fspawner to a &4%s &fspawner."
+    DESTROYED: "Destroyed &6%s's &4%s &fspawner."
+    NO_PERMISSION_PLACE: "&cYou do not have permission to place spawners."
+    NO_PERMISSION_SET: "&cYou do not have permission to set spawners."
+    NOT_OWNER: "&cThis spawner does not belong to you!"
+    OWNER_IS: "This spawner belongs to &6%s&f."
+    NONE: " &oNone"
+    NO_PERMISSION: "&cYou do not have permission to pass this command."
+    PLAYER_NOT_EXIST: "&cPlayer doesn't exist."
+    SPAWNERS_TITLE: " &5Spawners - %s"
