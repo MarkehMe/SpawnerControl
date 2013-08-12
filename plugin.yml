@@ -45,8 +45,9 @@ permissions:
             sc.set.mushroomcow: true
             sc.set.pig: true
             sc.set.sheep: true
+            sc.set.horse: true
     sc.set.traditional:
-        description: Allows spawning of naturally occuring spawners
+        description: Allows spawning of naturally occurring spawners
         children:
             sc.set.blaze: true
             sc.set.cavespider: true
