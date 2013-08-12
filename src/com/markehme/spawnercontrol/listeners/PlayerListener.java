@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import com.markehme.spawnercontrol.Spawner;
 import com.markehme.spawnercontrol.SpawnerControl;
 import com.markehme.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.util.Utilities;
 
 public class PlayerListener implements Listener {
 
@@ -49,7 +50,7 @@ public class PlayerListener implements Listener {
 			return;
 		}
 
-		if (s.getOwner().equals(p.getName()) || p.hasPermission("sc.bypass")) {
+		if (s.getOwner().equals(p.getName()) || Utilities.hasPermission(p, "sc.bypass")) {
 			EntityType currentMob = cs.getSpawnedType();
 			ActiveList<EntityType> al = sc.buildAllowed(p);
 

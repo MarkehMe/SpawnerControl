@@ -25,6 +25,7 @@ import com.markehme.spawnercontrol.commands.SCCheck;
 import com.markehme.spawnercontrol.listeners.BlockListener;
 import com.markehme.spawnercontrol.listeners.PlayerListener;
 import com.markehme.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.util.Utilities;
 
 /**
  * SpawnerControl - a Bukkit plugin that allows players to place and control mob
@@ -176,7 +177,7 @@ public class SpawnerControl extends JavaPlugin {
 		
 		for (EntityType t : wl) {
 			String perm = "sc.set." + t.toString().replaceAll("_", "").toLowerCase();
-			if (p.hasPermission(perm)) {
+			if (Utilities.hasPermission(p, perm)) {
 				al.add(t);
 			}
 		}

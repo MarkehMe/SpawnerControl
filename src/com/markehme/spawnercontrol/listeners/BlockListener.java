@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import com.markehme.spawnercontrol.Spawner;
 import com.markehme.spawnercontrol.SpawnerControl;
 import com.markehme.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.util.Utilities;
 
 public class BlockListener implements Listener {
 
@@ -69,7 +70,7 @@ public class BlockListener implements Listener {
 			return;
 		}
 
-		if (s.getOwner().equals(p.getName()) || p.hasPermission("sc.bypass")) {
+		if (s.getOwner().equals(p.getName()) || Utilities.hasPermission(p, "sc.bypass")) {
 			sc.removeSpawner(loc);
 
 			if (!s.getOwner().equals(p.getName())) {

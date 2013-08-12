@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 
 import com.markehme.spawnercontrol.Spawner;
 import com.markehme.spawnercontrol.SpawnerControl;
+import com.markehme.spawnercontrol.util.Utilities;
 
 public class SCCheck implements CommandExecutor {
 
@@ -27,14 +28,14 @@ public class SCCheck implements CommandExecutor {
 			String owner;
 
 			if (args.length < 1) {
-				if (!sender.hasPermission("sc.check")) {
+				if (!Utilities.hasPermission(sender, "sc.check")) {
 					sender.sendMessage(sc.getMsg("NO_PERMISSION"));
 					return true;
 				}
 
 				owner = sender.getName();
 			} else {
-				if (!sender.hasPermission("sc.check.others")) {
+				if (!Utilities.hasPermission(sender, "sc.check.others")) {
 					sender.sendMessage(sc.getMsg("NO_PERMISSION"));
 					return true;
 				}
