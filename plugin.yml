@@ -1,8 +1,8 @@
 name: SpawnerControl
 description: Allows players to control spawner settings
 main: com.github.stephengardner.spawnercontrol.SpawnerControl
-version: 0.5
-author: Stephen Gardner
+version: 1.0
+author: Stephen Gardner, MarkehMe
 commands:
     sccheck:
         description: Checks spawners owned by player
