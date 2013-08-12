@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol.listeners;
+package com.markehme.spawnercontrol.listeners;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -13,9 +13,9 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.stephengardner.spawnercontrol.Spawner;
-import com.github.stephengardner.spawnercontrol.SpawnerControl;
-import com.github.stephengardner.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.Spawner;
+import com.markehme.spawnercontrol.SpawnerControl;
+import com.markehme.spawnercontrol.util.ActiveList;
 
 public class BlockListener implements Listener {
 

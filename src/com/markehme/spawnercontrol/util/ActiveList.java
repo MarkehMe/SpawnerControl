@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol.util;
+package com.markehme.spawnercontrol.util;
 
 import java.util.ArrayList;
 import java.util.Collection;

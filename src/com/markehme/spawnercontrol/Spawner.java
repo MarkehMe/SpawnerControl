@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol;
+package com.markehme.spawnercontrol;
 
 import java.io.Serializable;
 import java.util.Date;

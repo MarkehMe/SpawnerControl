@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol.commands;
+package com.markehme.spawnercontrol.commands;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import com.github.stephengardner.spawnercontrol.Spawner;
-import com.github.stephengardner.spawnercontrol.SpawnerControl;
+import com.markehme.spawnercontrol.Spawner;
+import com.markehme.spawnercontrol.SpawnerControl;
 
 public class SCCheck implements CommandExecutor {
 

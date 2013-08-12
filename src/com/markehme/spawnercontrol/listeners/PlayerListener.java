@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol.listeners;
+package com.markehme.spawnercontrol.listeners;
 
 import java.util.Date;
 
@@ -12,9 +12,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.github.stephengardner.spawnercontrol.Spawner;
-import com.github.stephengardner.spawnercontrol.SpawnerControl;
-import com.github.stephengardner.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.Spawner;
+import com.markehme.spawnercontrol.SpawnerControl;
+import com.markehme.spawnercontrol.util.ActiveList;
 
 public class PlayerListener implements Listener {
 

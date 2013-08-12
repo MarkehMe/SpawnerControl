@@ -1,4 +1,4 @@
-package com.github.stephengardner.spawnercontrol;
+package com.markehme.spawnercontrol;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,16 +18,18 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.stephengardner.spawnercontrol.commands.SCCheck;
-import com.github.stephengardner.spawnercontrol.listeners.BlockListener;
-import com.github.stephengardner.spawnercontrol.listeners.PlayerListener;
-import com.github.stephengardner.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.commands.SCCheck;
+import com.markehme.spawnercontrol.listeners.BlockListener;
+import com.markehme.spawnercontrol.listeners.PlayerListener;
+import com.markehme.spawnercontrol.util.ActiveList;
 
 /**
  * SpawnerControl - a Bukkit plugin that allows players to place and control mob
  * spawners.
  * 
- * @author Stephen Gardner <StephenBGardner@gmail.com>
+ * The original plugin was created by Stephen Gardner <StephenBGardner@gmail.com>.
+ * 
+ * @author Mark Hughes <mark@markeh.me>
  * 
  *         SpawnerControl is free software: you can redistribute it and/or
  *         modify it under the terms of the GNU General Public License as
@@ -126,6 +128,7 @@ public class SpawnerControl extends JavaPlugin {
 		ActiveList<EntityType> al = new ActiveList<EntityType>();
 		ArrayList<EntityType> wl = new ArrayList<EntityType>();
 
+		// These are the list of entities that are supported
 		wl.add(EntityType.BAT);
 		wl.add(EntityType.BLAZE);
 		wl.add(EntityType.CAVE_SPIDER);
@@ -154,7 +157,8 @@ public class SpawnerControl extends JavaPlugin {
 		wl.add(EntityType.WITHER);
 		wl.add(EntityType.WOLF);
 		wl.add(EntityType.ZOMBIE);
-
+		wl.add(EntityType.HORSE);
+		
 		for (EntityType t : wl) {
 			String perm = "sc.set." + t.toString().replaceAll("_", "").toLowerCase();
 			if (p.hasPermission(perm)) {
