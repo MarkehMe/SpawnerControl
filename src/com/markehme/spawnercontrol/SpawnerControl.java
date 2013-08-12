@@ -11,11 +11,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+import net.milkbowl.vault.permission.Permission;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.markehme.spawnercontrol.commands.SCCheck;
@@ -59,6 +62,8 @@ public class SpawnerControl extends JavaPlugin {
 
 	private Material tool;
 
+	public static Permission permission = null;
+	
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
@@ -100,8 +105,18 @@ public class SpawnerControl extends JavaPlugin {
 
 		loadSpawnerData();
 		loadOwnerIndex();
+		
+		RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
+		
+		if (permissionProvider != null) {
+			permission = permissionProvider.getProvider();
+		}
+		
+		if (permission != null) {
+			log("Hooked into Vault for permissions.");
+		}
 	}
-
+	
 	@Override
 	public void onDisable() {
 		if (writeTask != 0) {
