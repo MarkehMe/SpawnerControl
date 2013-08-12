@@ -155,6 +155,7 @@ public class SpawnerControl extends JavaPlugin {
 		wl.add(EntityType.ENDERMAN);
 		wl.add(EntityType.GHAST);
 		wl.add(EntityType.GIANT);
+		wl.add(EntityType.HORSE);
 		wl.add(EntityType.IRON_GOLEM);
 		wl.add(EntityType.MAGMA_CUBE);
 		wl.add(EntityType.MUSHROOM_COW);
@@ -173,7 +174,6 @@ public class SpawnerControl extends JavaPlugin {
 		wl.add(EntityType.WITHER);
 		wl.add(EntityType.WOLF);
 		wl.add(EntityType.ZOMBIE);
-		wl.add(EntityType.HORSE);
 		
 		for (EntityType t : wl) {
 			String perm = "sc.set." + t.toString().replaceAll("_", "").toLowerCase();
