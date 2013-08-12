@@ -30,7 +30,7 @@ public class BlockListener implements Listener {
 		sc.getServer().getPluginManager().registerEvents(this, sc);
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled=true)
 	public void onBlockPlace(BlockPlaceEvent e) {
 		Block block = e.getBlockPlaced();
 		Player p = e.getPlayer();
@@ -55,7 +55,7 @@ public class BlockListener implements Listener {
 		sc.addSpawner(new Spawner(p.getName(), cs.getSpawnedType(), cs.getLocation()));
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled=true)
 	public void onBlockBreak(BlockBreakEvent e) {
 		Location loc = e.getBlock().getLocation();
 		Player p = e.getPlayer();
