@@ -29,7 +29,7 @@ public class PlayerListener implements Listener {
 		sc.getServer().getPluginManager().registerEvents(this, sc);
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled=true)
 	public void onPlayerInteract(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
 
