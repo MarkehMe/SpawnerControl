@@ -25,6 +25,8 @@ import com.markehme.spawnercontrol.commands.SCCheck;
 import com.markehme.spawnercontrol.listeners.BlockListener;
 import com.markehme.spawnercontrol.listeners.PlayerListener;
 import com.markehme.spawnercontrol.util.ActiveList;
+import com.markehme.spawnercontrol.util.Metrics;
+import com.markehme.spawnercontrol.util.Metrics.Graph;
 import com.markehme.spawnercontrol.util.Utilities;
 
 /**
@@ -62,7 +64,9 @@ public class SpawnerControl extends JavaPlugin {
 	HashMap<String, ArrayList<String>> ownerIndex;
 
 	private Material tool;
-
+	
+	private static Metrics metrics = null;
+	
 	public static Permission permission = null;
 	
 	@Override
@@ -115,6 +119,18 @@ public class SpawnerControl extends JavaPlugin {
 		
 		if (permission != null) {
 			log("Hooked into Vault for permissions.");
+		}
+		
+		try {
+			
+			metrics = new Metrics(this);
+			
+			metrics.start();
+			
+		} catch (IOException e) {
+			
+			log("Metrics failed to start up: "+e.getMessage());
+			
 		}
 	}
 	
