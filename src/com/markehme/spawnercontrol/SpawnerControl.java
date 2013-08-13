@@ -18,6 +18,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -62,12 +63,24 @@ public class SpawnerControl extends JavaPlugin {
 	File spawnerFile, indexFile;
 	HashMap<String, Spawner> spawners;
 	HashMap<String, ArrayList<String>> ownerIndex;
-
+	
+	SpawnerControl instance;
+	
 	private Material tool;
 	
 	private static Metrics metrics = null;
 	
 	public static Permission permission = null;
+	
+	public SpawnerControl() {
+		super();
+		
+		if(instance != null) {
+			log("Woops! Bad reload? instance should be null.");
+		}
+		
+		instance = this;
+	}
 	
 	@Override
 	public void onEnable() {
@@ -142,6 +155,25 @@ public class SpawnerControl extends JavaPlugin {
 
 		writeData();
 		spawners.clear();
+		
+		try {
+			HandlerList.unregisterAll(instance);
+		} catch(Exception e) {
+			log("Failed to unregister in HandlerList");
+		}
+		
+		try { 
+			getServer().getScheduler().cancelTasks(this); // This will stop metrics, but it will be enabled again onEnable
+		} catch(Exception e) {
+			log("Failed to cancel tasks in Scheduler.");
+		}
+		
+		try { 
+			getServer().getServicesManager().unregisterAll(this);
+		} catch(Exception e) {
+			log("Failed to unregister services in Services manager.");
+		}
+
 	}
 
 	public void log(String log) {
