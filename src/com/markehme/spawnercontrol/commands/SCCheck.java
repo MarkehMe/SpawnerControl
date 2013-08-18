@@ -9,6 +9,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import com.markehme.spawnercontrol.Spawner;
 import com.markehme.spawnercontrol.SpawnerControl;
@@ -24,6 +25,7 @@ public class SCCheck implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
 		if (cmd.getName().equalsIgnoreCase("sccheck")) {
 			String owner;
 
@@ -32,8 +34,15 @@ public class SCCheck implements CommandExecutor {
 					sender.sendMessage(sc.getMsg("NO_PERMISSION"));
 					return true;
 				}
-
+				
+				// Ensure that the sender is a player, as the console can't be the owner
+				if( !( sender instanceof Player ) ) {
+					sender.sendMessage(sc.getMsg("NOT_A_PLAYER"));
+					return true;
+				}
+				
 				owner = sender.getName();
+				
 			} else {
 				if (!Utilities.hasPermission(sender, "sc.check.others")) {
 					sender.sendMessage(sc.getMsg("NO_PERMISSION"));
