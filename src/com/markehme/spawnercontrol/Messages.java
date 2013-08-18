@@ -25,6 +25,7 @@ public class Messages {
 		messages.put("NO_PERMISSION", color(sc.getConfig().getString("NO_PERMISSION", "&cYou do not have permission to pass this command.")));
 		messages.put("PLAYER_NOT_EXIST", color(sc.getConfig().getString("PLAYER_NOT_EXIST", "&cPlayer doesn't exist.")));
 		messages.put("SPAWNERS_TITLE", color(sc.getConfig().getString("SPAWNERS_TITLE", " &5Spawners - %s")));
+		messages.put("NOT_A_PLAYER", color(sc.getConfig().getString("NOT_A_PLAYER", "&cThis command can only be used by a player.")));
 	}
 
 	public String color(String msg) {
