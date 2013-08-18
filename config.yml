@@ -13,3 +13,5 @@ SpawnerControl:
     NO_PERMISSION: "&cYou do not have permission to pass this command."
     PLAYER_NOT_EXIST: "&cPlayer doesn't exist."
     SPAWNERS_TITLE: " &5Spawners - %s"
+    NOT_A_PLAYER: "&cThis command can only be used by a player."
+    
